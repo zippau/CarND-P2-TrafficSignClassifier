@@ -40,7 +40,6 @@ The goals / steps of this project are the following:
 | Design and Test a Model Architecture | Model Architecture |The submission provides details of the characteristics and qualities of the architecture, such as the type of model used, the number of layers, the size of each layer. Visualizations emphasizing particular qualities of the architecture are encouraged. | Section 2.2 | Yes |
 | Design and Test a Model Architecture | Model Training | The submission describes how the model was trained by discussing what optimizer was used, batch size, number of epochs and values for hyperparameters. | Section 2.3 | Yes |
 | Design and Test a Model Architecture | Solution Approach | The submission describes the approach to finding a solution. Accuracy on the validation set is 0.93 or greater. | Section 2.3 | Yes |
-
 | Test a Model on New Images | Acquiring New Images | The submission includes five new German Traffic signs found on the web, and the images are visualized. Discussion is made as to any particular qualities of the images or traffic signs in the images that may be of interest, such as whether they would be difficult for the model to classify. | Section 3.1 | Yes |
 | Test a Model on New Images | Performance on New Images | The submission documents the performance of the model when tested on the captured images. The performance on the new images is compared to the accuracy results of the test set. | Section 3.2 and 3.3 | Yes |
 | Test a Model on New Images | Model Certainty - Softmax Probabilities | The top five softmax probabilities of the predictions on the captured images are outputted. The submission discusses how certain or uncertain the model is of its predictions. | Section 3.4 | Yes |
@@ -166,8 +165,8 @@ Not only did it predict all signs currectly, but the softmax percentages were ex
 
 Here are five German traffic signs that I found on the web:
 
-![Sign-1][image4](./webimg/sign-1.jpg) ![Sign-3][image5](./webimg/sign-3.jpg) ![Sign-4][image6](./webimg/sign-4.jpg) 
-![Sign-5][image7](./webimg/sign-5.jpg) ![Sign-6][image8](./webimg/sign-6.jpg)
+![Sign-1](./webimg/sign-1.jpg) ![Sign-3](./webimg/sign-3.jpg) ![Sign-4](./webimg/sign-4.jpg) 
+![Sign-5](./webimg/sign-5.jpg) ![Sign-6](./webimg/sign-6.jpg)
 
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
