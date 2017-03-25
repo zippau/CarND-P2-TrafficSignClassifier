@@ -70,7 +70,7 @@ The code for this step is contained in Section 1.2 of the IPython notebook.
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how many signs of each type are in the training dataset.
 
-![Data visualisation][image1](./examples/placeholder.png)
+![Data visualisation](./examples/placeholder.png)
 
 ###Design and Test a Model Architecture
 
