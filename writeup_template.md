@@ -127,18 +127,26 @@ My final model consisted of the following layers:
 
 ####4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
+
 The code for training the model is located in the eigth cell of the ipython notebook. 
 
-To train the model, I used an ....
+To train the model, I started using paramets set out in the practice examples. My aim was to optimise the run time to meet the basic accuracy rates set out within the documentation. In this aim, I decided to leave all the parameters as default, and tune each of them to see if them improved the run time. I investigated batch size, learning rate and epochs in that order. 
+
+I decided not to tune the hyperparameters because I need to undertake more research into what impact each will have.
+
+In my trial and error, increasing the batch size (to 256), learning rate (0.01) and decreasing epochs all reduced the accuracy of the model. Because of this I left the batch size as 128, learning rate as 0.001 and increased epochs to 40. This improved the overall accuracy of the model.
+
+In future I will try to tune the hyperparameters and investigate other model structures that improve the model further (I left my model investigation to adding minor normalisation which drastically improved accuracy).
+
 
 ####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 The code for calculating the accuracy of the model is located in Section 2.3 of the Ipython notebook.
 
 My final model results were:
-* training set accuracy of 95.3%
-* validation set accuracy of 94.7% 
-* test set accuracy of 100%
+* training set accuracy of 100%
+* test set accuracy of 95.0%
+* validation set accuracy of 95.3% 
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -168,6 +176,7 @@ Here are five German traffic signs that I found on the web:
 ![Sign-1](./webimg/sign-1.jpg) ![Sign-3](./webimg/sign-3.jpg) ![Sign-4](./webimg/sign-4.jpg) 
 ![Sign-5](./webimg/sign-5.jpg) ![Sign-6](./webimg/sign-6.jpg)
 
+The images were retrieved from the internet, as such there will be difficulties for the model to classify these images. The difficulties include, rotation angle of the sign, different brightness, background colours and side-angle direction of one of the images.
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -184,7 +193,7 @@ Here are the results of the prediction:
 | Wild animal crossing	| Wild animal crossing     						|
 
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 94.7%
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 94.5%
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -194,47 +203,53 @@ For the first image, the model is relatively sure that this is a no entry sign (
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .99974         		| No entry sign   								| 
-| .00024     			| Speed limit (20km/h)							|
-| .00000				| Stop sign										|
-
+| .99999         		| No entry sign   								| 
+| .00000     			| Stop sign										| 
+| .00000				| Bicycles crossing								| 
+| .00000				| Speed limit (30km/h)							|
+| .00000				| Road work sign								| 
 
 
 For the second image, the model is relatively sure that this is a bumpy sign (probability of 0.96), and the image does contain a bumpy sign. The top three soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .96410         		| Bumpy Road   									| 
-| .03184     			| General caution								|
-| .00228				| Bicycles crossing								|
-
+| .94096         		| Bumpy Road   									| 
+| .05820     			| Bicycles crossing								| 
+| .00082				| Road work sign								| 
+| .00000				| Road narrows on the right						|
+| .00000				| General caution								| 
 
 
 For the third image, the model is relatively sure that this is a stop sign (probability of 0.99), and the image does contain a stop sign. The top three soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .99998         		| Stop   										| 
-| .00001     			| Speed limit (50km/h)							|
-| .00000				| Speed limit (30km/h)							|
-
+| .99918         		| Stop sign										| 
+| .00066     			| Speed limit (60km/h)							|
+| .00012				| No vehicles									| 
+| .00004				| Speed limit (80km/h)							| 
+| .00000				| Children crossing								| 
 
 
 For the fourth image, the model is relatively sure that this is a road work sign (probability of 0.99), and the image does contain a road work sign. The top three soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .99983         		| Road work   									| 
-| .00017    			| Speed limit (60km/h)							|
-| .00000				| Slippery Road									|
-
+| .71987         		| Road work sign								| 
+| .27958    			| Bumpy Road   									| 
+| .00054				| Bicycles crossing								| 
+| .00000				| Road narrows on the right						|
+| .00000				| Children crossing								| 
 
 
 For the fifth image, the model is relatively sure that this is a Wild animals crossing sign (probability of 0.99), and the image does contain a Wild animals crossing sign. The top three soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 1.0000         		| Wild animals crossing   						| 
-| .00000     			| Road narrows on the right						|
-| .00000				| Double Curve									|
+| .99997         		| Wild animals crossing   						| 
+| .00003     			| Double curve									| 
+| .00000				| Slippery road									| 
+| .00000				| Dangerous curve to the left					| 
+| .00000				| Bicycles crossing								| 
 
